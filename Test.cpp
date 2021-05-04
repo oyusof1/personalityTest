@@ -2,11 +2,13 @@
 using namespace std;
 
 
-int main {
+int main() {
 
 
 	//Add basic dfsdfgdfhgd
 	//TODO
 	cout << "test" << endl;
+
+	cout << "SDFSDF" << endl;
 
 }
