@@ -15,10 +15,10 @@ public:
     string analyze_personality();
     void categorize_output(string);
     void save_output(string);
-    // Add anything you may need
+    
 
 private:
-    // Add anything you may need
+    
 };
 
 #endif

@@ -32,34 +32,23 @@ void personality_test::run_test() {
 }
 
 
-/* Analyze Personality Method
- * 1) Ask user one question at a time
+/* 1) Ask user one question at a time
  * 2) Read in user's response and construct a vector containing the responses
- * 3) Analyze the responses to construct a personality type (eg. ENFJ)
- * @param None
- * @return string
- * */
+ * 3) Analyze the responses to construct a personality type (eg. ENFJ)*/
 string personality_test::analyze_personality() {
     
     string output = "";
     return output;
 }
 
-/* Categorize Output Method
- * 1) Read in the analysis.txt file
- * 2) Provided a user's personality type, print out to console the user's personality description
- * @param Personality type string (eg. "ENFJ")
- * @return None, Text to console
- */
+/* 1) Read in the analysis.txt file
+ * 2) Provided a user's personality type, print out to console the user's personality description */
 void personality_test::categorize_output(string my_personality) {
     //TODO
 }
 
-/* Save Output
- * 1) Ask user to save or not
+/* 1) Ask user to save or not
  * 2) If yes, ask for a file name and save the results
- * @param string (the thing to write)
- * @return None, creates a file
  */
 void personality_test::save_output(string output) {
     //TODO
