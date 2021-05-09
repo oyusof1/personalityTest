@@ -146,8 +146,7 @@ string personality_test::analyze_personality(vector<string> questions) {
     return personalityType;
 }
 
-/* 1) Read in the analysis.txt file
- * 2) Provided a user's personality type, print out to console the user's personality description */
+// create personality description output 
 void personality_test::categorize_output(string myPersonality) {
     vector<string> personalityTypes;
     ifstream inData("analysis.txt");
