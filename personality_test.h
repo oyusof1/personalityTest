@@ -12,7 +12,6 @@ public:
     vector<string> load_file(string fileName);
     string analyze_personality(vector<string> questions);
     void categorize_output(string);
-    void save_output(string);
 private:
     
 };
