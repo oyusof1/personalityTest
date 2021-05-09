@@ -2,49 +2,51 @@
 #include <string>
 #include <fstream>
 #include <vector>
-
+#include "personality_test.cpp"
 #include "personality_test.h"
+#include "output.cpp"
 
 using namespace std;
 
-//Prints out welcome banner
-void printBanner() {
-    cout << "====================================" << endl;
-    cout << "  Welcome to our Personality Test!" << endl;
-    cout << "====================================" << endl << endl;
-}
-
 int main() {
+
+    bool playAgain = false;
+    while (!playAgain) {
     //initialize test object
     personality_test test;
 
     //initialize vector
     vector<string> questionList;
 
-    //initialize file for questions
-    ifstream inData("question.txt");
-    
-    //test if the file is open
-    if(!inData)  {
-        cout<<"Error opening question file.\n Please check if you have the 'questions.txt' file. "<< endl;
+    //initialize file for questions and test if both files are loaded
+    string fileName = "questions.txt";
+    ifstream inData(fileName);
+    ifstream inData2("analysis.txt");
+
+
+    //test if the file is open and redirect if file not found
+    if(!inData || !inData2)  {
+        cout << "Error opening question file.\n Please check if you have the 'questions.txt' and 'analysis.txt' file." << endl;
         system("pause");
         return -1;
     } 
     else {
-        questionList = test.load_file(inData);
+        questionList = test.load_file(fileName);
     }
 
-     printBanner();
+    //call banner and instructions output
+    printBanner();
+    printInstructions();
 
-    for (int j = 0; j < questionList.size(); j++) {
-        cout << questionList[j] << endl;
+    //start test and save string output 
+    string personalityType = test.analyze_personality(questionList);
+
+
+    //clear screen and display output
+    cout << string( 100, '\n' );
+    test.categorize_output(personalityType);
+    playAgain = thankYou();
     }
-    
-    
-    // questionList = load_file(inData);
-    
-    //test.printout();
-    //test.run_test();
-
+        
 }
 
