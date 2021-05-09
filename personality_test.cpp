@@ -184,9 +184,3 @@ void personality_test::categorize_output(string myPersonality) {
 
 }
 
-/* 1) Ask user to save or not
- * 2) If yes, ask for a file name and save the results
- */
-void personality_test::save_output(string output) {
-    //TODO
-}
